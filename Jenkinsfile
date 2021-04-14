@@ -18,8 +18,10 @@ pipeline {
   		}
 		stage('JUnit'){
 			steps {
+				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
+					sh 'rm *.xml'
+				}
 				dir("/var/lib/jenkins/workspace/prueba/backend") {
-					sh 'rm /build/test-results/test/*.xml'
 					sh './gradlew test'
 				}
 				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
