@@ -1,9 +1,9 @@
 pipeline {
 	agent any
 	stages {
-		stage('prueba') {
+		stage('Inicio') {
 			steps {
-				echo "Probando"
+				echo "Inicio"
 			}
 		}
 		stage('SonarQube analysis') {
@@ -16,7 +16,7 @@ pipeline {
 				}
 			}
   		}
-		stage('Test'){
+		stage('JUnit'){
 			steps {
 				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
 					sh 'rm *.xml'
@@ -30,6 +30,9 @@ pipeline {
 					junit '*.xml'
 				}
 			}
+		}
+		stage('Fin'){
+			echo "Fin"
 		}
 	}
 }
