@@ -16,18 +16,18 @@ pipeline {
 				}
 			}
   		}
-		stage('JUnit'){
+		stage('Test'){
 			steps {
 				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
 					sh 'rm *.xml'
 				}
-				dir("/var/lib/jenkins/workspace/prueba/backend") {
-					sh './gradlew test'
-				}
-				always {
-					dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
-						junit '*.xml'
+				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    			dir("/var/lib/jenkins/workspace/prueba/backend") {
+						sh './gradlew test'
 					}
+                		}
+				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
+					junit '*.xml'
 				}
 			}
 		}
