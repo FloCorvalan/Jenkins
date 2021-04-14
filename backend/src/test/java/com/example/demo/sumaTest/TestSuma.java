@@ -22,7 +22,6 @@ public class TestSuma extends AbstractTest {
 
     TestSuma(){
         this.gson = new GsonBuilder().setPrettyPrinting().create();
-	System.out.println("Prueba")
     }
 
     @Test
