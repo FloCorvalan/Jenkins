@@ -20,7 +20,7 @@ pipeline {
 			steps {
 				dir("/var/lib/jenkins/workspace/prueba/backend") {
 					sh './gradlew test'
-					junit '**/test-results/*.xml'
+					junit 'TEST-com.example.demo.sumaTest.TestSuma.xml'
 				}
 			}
 		}
