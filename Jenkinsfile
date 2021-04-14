@@ -18,7 +18,10 @@ pipeline {
   		}
 		stage('JUnit'){
 			steps {
-				junit 'test-results.xml'
+				dir("/var/lib/jenkins/workspace/prueba/backend") {
+					sh './gradlew test'
+					junit 'test-results.xml'
+				}
 			}
 		}
 	}
