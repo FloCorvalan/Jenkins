@@ -22,7 +22,7 @@ pipeline {
 					sh './gradlew test'
 				}
 				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
-					junit '**/test-results/*.xml'
+					junit '*.xml'
 				}
 			}
 		}
