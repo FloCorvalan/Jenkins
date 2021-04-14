@@ -31,8 +31,10 @@ pipeline {
 				}
 			}
 		}
-		stage('Fin'){
-			echo "Fin"
+		stage('Fin') {
+			steps {
+				echo "Fin"
+			}
 		}
 	}
 }
