@@ -43,7 +43,7 @@ public class TestSuma extends AbstractTest {
         String sumaRes = mvcResult.getResponse().getContentAsString();
         Suma sumaFinal = gson.fromJson(sumaRes, Suma.class);
 
-        assertEquals(-1, sumaFinal.getResultado());
+        assertEquals(0, sumaFinal.getResultado());
     }
 
     @Test
