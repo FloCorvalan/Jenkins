@@ -19,6 +19,7 @@ pipeline {
 		stage('JUnit'){
 			steps {
 				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
+					sh 'touch hola.xml'
 					sh 'rm *.xml'
 				}
 				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
