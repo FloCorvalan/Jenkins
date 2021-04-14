@@ -17,7 +17,9 @@ pipeline {
 			}
   		}
 		stage('JUnit'){
-			junit 'test-results.xml'
+			steps {
+				junit 'test-results.xml'
+			}
 		}
 	}
 }
