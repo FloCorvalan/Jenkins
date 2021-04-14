@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('prueba') {
 			steps {
-				echo "Probando"
+				echo "Probando JUnit"
 			}
 		}
 		stage('SonarQube analysis') {
