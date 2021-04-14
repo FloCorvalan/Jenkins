@@ -16,5 +16,8 @@ pipeline {
 				}
 			}
   		}
+		stage('JUnit'){
+			junit 'test-results.xml'
+		}
 	}
 }
