@@ -24,8 +24,10 @@ pipeline {
 				dir("/var/lib/jenkins/workspace/prueba/backend") {
 					sh './gradlew test'
 				}
-				dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
-					junit '*.xml'
+				always {
+					dir("/var/lib/jenkins/workspace/prueba/backend/build/test-results/test") {
+						junit '*.xml'
+					}
 				}
 			}
 		}
