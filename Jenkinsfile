@@ -38,4 +38,9 @@ pipeline {
 			}
 		}
 	}
+	post{
+		always{
+			echo "Current result: ${currentBuild.currentResult}" 
+		}
+	}
 }
