@@ -39,8 +39,11 @@ pipeline {
 		}
 	}
 	post{
-		always{
-			logstashSend failBuild: true or false, maxLines: 1000
+		success{
+			logstashSend failBuild: false, maxLines: 1
+		}
+		failure{
+			logstashSend failBuild: true, maxLines: 1
 		}
 	}
 }
