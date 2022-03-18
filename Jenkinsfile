@@ -40,7 +40,7 @@ pipeline {
 	}
 	post{
 		always{
-			echo "Current result: ${currentBuild.result}" 
+			echo "Current result: ${currentBuild.getBuildCauses}" 
 		}
 	}
 }
