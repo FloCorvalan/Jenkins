@@ -40,7 +40,7 @@ pipeline {
 	}
 	post{
 		always{
-			echo "Current result: ${currentBuild.description}" 
+			echo "Current result: ${currentBuild.rawBuild}" 
 		}
 	}
 }
